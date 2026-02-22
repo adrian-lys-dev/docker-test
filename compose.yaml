@@ -14,6 +14,7 @@ services:
           path: .
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+
   db:
     image: postgres:18
     restart: always
@@ -32,8 +33,10 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
 volumes:
   db-data:
+
 secrets:
   db-password:
     file: db/password.txt
